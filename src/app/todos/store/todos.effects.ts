@@ -7,7 +7,7 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 
 @Injectable()
-export class TodosEffect {
+export class TodosEffects {
   constructor(private actions$: Actions,
               private todosService: TodosService) {
   }
