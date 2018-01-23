@@ -7,6 +7,7 @@ import { EffectsModule }        from '@ngrx/effects';
 import { TodosService }         from './todos.service';
 import { TodosEffects }         from './store/todos.effects';
 import { TodosColumnComponent } from './todos-column/todos-column.component';
+import { TodoCardComponent } from './todo-card/todo-card.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { TodosColumnComponent } from './todos-column/todos-column.component';
   ],
   declarations: [
     TodosComponent,
-    TodosColumnComponent
+    TodosColumnComponent,
+    TodoCardComponent
   ],
   providers: [
     TodosService

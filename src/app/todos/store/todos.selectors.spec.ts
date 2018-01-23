@@ -90,4 +90,40 @@ describe('Todos Selectors', () => {
       expect(result).toEqual(todos);
     });
   });
+
+  describe('getCompleteTodos', () => {
+    it('should return complete todos as an array', () => {
+      let result;
+
+      store
+        .select(fromSelectors.getCompleteTodos)
+        .subscribe(value => {
+          result = value;
+        });
+
+      expect(result).toEqual([]);
+
+      store.dispatch(new fromActions.LoadTodosSuccess(todos));
+
+      expect(result).toEqual([todos[1]]);
+    });
+  });
+
+  describe('getIncompleteTodos', () => {
+    it('should return incomplete todos as an array', () => {
+      let result;
+
+      store
+        .select(fromSelectors.getIncompleteTodos)
+        .subscribe(value => {
+          result = value;
+        });
+
+      expect(result).toEqual([]);
+
+      store.dispatch(new fromActions.LoadTodosSuccess(todos));
+
+      expect(result).toEqual([todos[0], todos[2]]);
+    });
+  });
 });

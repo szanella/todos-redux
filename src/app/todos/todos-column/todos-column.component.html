@@ -1,3 +1,2 @@
-<p>
-  todos-column works!
-</p>
+<h2>{{ title }}</h2>
+<todo-card *ngFor="let todo of todos" [todo]="todo"></todo-card>

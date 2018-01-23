@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
-import { CoreModule } from './core/core.module';
-import { TodosModule } from './todos/todos.module';
-import { CustomSerializer, reducers } from './store/router.reducer';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { RouterEffect } from './store/router.effect';
+import { CoreModule }                                         from './core/core.module';
+import { TodosModule }                                        from './todos/todos.module';
+import { CustomSerializer, reducers }                         from './store/router.reducer';
+import { StoreModule }                                        from '@ngrx/store';
+import { EffectsModule }                                      from '@ngrx/effects';
+import { RouterEffect }                                       from './store/router.effect';
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
-import { environment } from '../environments/environment';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment }                                        from '../environments/environment';
+import { StoreDevtoolsModule }                                from '@ngrx/store-devtools';
+import { MatToolbarModule }                                   from '@angular/material';
 
 
 @NgModule({
@@ -24,7 +25,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([RouterEffect]),
     StoreRouterConnectingModule,
-    environment.production ? [] : StoreDevtoolsModule.instrument()
+    environment.production ? [] : StoreDevtoolsModule.instrument(),
+
+    MatToolbarModule
   ],
   providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }],
   bootstrap: [AppComponent]

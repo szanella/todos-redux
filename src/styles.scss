@@ -1,7 +1,44 @@
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+$font-family: Georgia;
+$font-weight-normal: 400;
+$base-font-size: 16px;
+
 /* You can add global styles to this file, and also import other style files */
-#html, body {
+html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: $font-weight-normal;
+  color: #000000;
+  height: 100%;
+  font-size: $base-font-size;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus {
+  outline: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+@mixin shadowed() {
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.33);
+  -moz-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.33);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.33);
 }
